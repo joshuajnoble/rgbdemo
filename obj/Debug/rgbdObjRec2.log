@@ -1,0 +1,55 @@
+﻿  main.cpp
+  ofApp.cpp
+c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(326): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\ofApp.cpp)
+c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(331): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\ofApp.cpp)
+c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(912): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\ofApp.cpp)
+c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(913): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\ofApp.cpp)
+c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(914): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\ofApp.cpp)
+c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(915): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\ofApp.cpp)
+c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(326): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\main.cpp)
+c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(331): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\main.cpp)
+c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(912): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\main.cpp)
+c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(913): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\main.cpp)
+c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(914): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\main.cpp)
+c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(915): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\main.cpp)
+src\ofApp.cpp(116): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'double'
+src\ofApp.cpp(121): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'double'
+C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(168): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\main.cpp)
+  C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(166): note: while compiling class template member function 'const std::vector<GLuint,std::allocator<_Ty>> &ofxCv::Tracker<cv::Rect>::track(const std::vector<cv::Rect,std::allocator<cv::Rect_<int>>> &)'
+          with
+          [
+              _Ty=GLuint
+          ] (compiling source file src\main.cpp)
+  C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(324): note: see reference to function template instantiation 'const std::vector<GLuint,std::allocator<_Ty>> &ofxCv::Tracker<cv::Rect>::track(const std::vector<cv::Rect,std::allocator<cv::Rect_<int>>> &)' being compiled
+          with
+          [
+              _Ty=GLuint
+          ] (compiling source file src\main.cpp)
+  C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(309): note: see reference to class template instantiation 'ofxCv::Tracker<cv::Rect>' being compiled (compiling source file src\main.cpp)
+C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(169): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\main.cpp)
+C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(202): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\main.cpp)
+C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(214): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\main.cpp)
+C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(168): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\ofApp.cpp)
+  C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(166): note: while compiling class template member function 'const std::vector<GLuint,std::allocator<_Ty>> &ofxCv::Tracker<cv::Rect>::track(const std::vector<cv::Rect,std::allocator<cv::Rect_<int>>> &)'
+          with
+          [
+              _Ty=GLuint
+          ] (compiling source file src\ofApp.cpp)
+  C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(324): note: see reference to function template instantiation 'const std::vector<GLuint,std::allocator<_Ty>> &ofxCv::Tracker<cv::Rect>::track(const std::vector<cv::Rect,std::allocator<cv::Rect_<int>>> &)' being compiled
+          with
+          [
+              _Ty=GLuint
+          ] (compiling source file src\ofApp.cpp)
+  C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(309): note: see reference to class template instantiation 'ofxCv::Tracker<cv::Rect>' being compiled (compiling source file src\ofApp.cpp)
+C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(169): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\ofApp.cpp)
+C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(202): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\ofApp.cpp)
+C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(214): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\ofApp.cpp)
+     Creating library bin\rgbdObjRec2_debug.lib and object bin\rgbdObjRec2_debug.exp
+  rgbdObjRec2.vcxproj -> C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\rgbdObjRec2_debug.exe
+  
+  	                   2	C:\Users\winbase\code\of_v0.10.0_vs2017_release\libs\fmodex\lib\vs\x64\
+  	  *EXTRA File 		 6402560	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\FreeImage.dll
+  
+  	                   1	C:\Users\winbase\code\of_v0.10.0_vs2017_release\libs\FreeImage\lib\vs\x64\
+  	  *EXTRA File 		 1503232	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\fmodex64.dll
+  	  *EXTRA File 		 1552384	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\fmodexL64.dll
