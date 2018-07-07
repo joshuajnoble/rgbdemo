@@ -1,55 +1,154 @@
-﻿  main.cpp
-  ofApp.cpp
-c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(326): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\ofApp.cpp)
-c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(331): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\ofApp.cpp)
-c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(912): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\ofApp.cpp)
-c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(913): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\ofApp.cpp)
-c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(914): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\ofApp.cpp)
-c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(915): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\ofApp.cpp)
-c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(326): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\main.cpp)
-c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(331): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\main.cpp)
-c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(912): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\main.cpp)
-c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(913): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\main.cpp)
-c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(914): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\main.cpp)
-c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(915): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\main.cpp)
-src\ofApp.cpp(116): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'double'
-src\ofApp.cpp(121): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'double'
-C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(168): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\main.cpp)
+﻿  ofApp.cpp
+c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(326): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(331): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(912): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(913): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(914): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\winbase\code\of_v0.10.0_vs2017_release\libs\openframeworks\math\ofMatrix4x4.h(915): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(168): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(166): note: while compiling class template member function 'const std::vector<GLuint,std::allocator<_Ty>> &ofxCv::Tracker<cv::Rect>::track(const std::vector<cv::Rect,std::allocator<cv::Rect_<int>>> &)'
           with
           [
               _Ty=GLuint
-          ] (compiling source file src\main.cpp)
+          ]
   C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(324): note: see reference to function template instantiation 'const std::vector<GLuint,std::allocator<_Ty>> &ofxCv::Tracker<cv::Rect>::track(const std::vector<cv::Rect,std::allocator<cv::Rect_<int>>> &)' being compiled
           with
           [
               _Ty=GLuint
-          ] (compiling source file src\main.cpp)
-  C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(309): note: see reference to class template instantiation 'ofxCv::Tracker<cv::Rect>' being compiled (compiling source file src\main.cpp)
-C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(169): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\main.cpp)
-C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(202): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\main.cpp)
-C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(214): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\main.cpp)
-C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(168): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\ofApp.cpp)
-  C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(166): note: while compiling class template member function 'const std::vector<GLuint,std::allocator<_Ty>> &ofxCv::Tracker<cv::Rect>::track(const std::vector<cv::Rect,std::allocator<cv::Rect_<int>>> &)'
+          ]
+  C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(309): note: see reference to class template instantiation 'ofxCv::Tracker<cv::Rect>' being compiled
+C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(169): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(202): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(214): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Utilities.h(244): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  src\ofApp.cpp(61): note: see reference to function template instantiation 'cv::Mat ofxCv::toCv<unsigned char>(ofPixels_<unsigned char> &)' being compiled
+C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Utilities.h(129): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Utilities.h(143): note: see reference to function template instantiation 'int ofxCv::getChannels<unsigned char>(const ofPixels_<unsigned char> &)' being compiled
+  C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Utilities.h(244): note: see reference to function template instantiation 'int ofxCv::getCvImageType<ofPixels_<unsigned char>>(const T &)' being compiled
           with
           [
-              _Ty=GLuint
-          ] (compiling source file src\ofApp.cpp)
-  C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(324): note: see reference to function template instantiation 'const std::vector<GLuint,std::allocator<_Ty>> &ofxCv::Tracker<cv::Rect>::track(const std::vector<cv::Rect,std::allocator<cv::Rect_<int>>> &)' being compiled
-          with
-          [
-              _Ty=GLuint
-          ] (compiling source file src\ofApp.cpp)
-  C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(309): note: see reference to class template instantiation 'ofxCv::Tracker<cv::Rect>' being compiled (compiling source file src\ofApp.cpp)
-C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(169): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\ofApp.cpp)
-C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(202): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\ofApp.cpp)
-C:\Users\winbase\code\of_v0.10.0_vs2017_release\addons\ofxCv\libs\ofxCv\include\ofxCv/Tracker.h(214): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\ofApp.cpp)
-     Creating library bin\rgbdObjRec2_debug.lib and object bin\rgbdObjRec2_debug.exp
+              T=ofPixels_<unsigned char>
+          ]
+  src\ofApp.cpp(61): note: see reference to function template instantiation 'cv::Mat ofxCv::toCv<unsigned char>(ofPixels_<unsigned char> &)' being compiled
   rgbdObjRec2.vcxproj -> C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\rgbdObjRec2_debug.exe
   
   	                   2	C:\Users\winbase\code\of_v0.10.0_vs2017_release\libs\fmodex\lib\vs\x64\
   	  *EXTRA File 		 6402560	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\FreeImage.dll
+  	  *EXTRA File 		 1321984	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_aruco341d.dll
+  	  *EXTRA File 		  819712	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_bgsegm341d.dll
+  	  *EXTRA File 		  790528	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_bioinspired341d.dll
+  	  *EXTRA File 		 4318208	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_calib3d341d.dll
+  	  *EXTRA File 		 1616896	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_ccalib341d.dll
+  	  *EXTRA File 		30996480	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_core341d.dll
+  	  *EXTRA File 		212967936	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_cudaarithm341d.dll
+  	  *EXTRA File 		 2376192	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_cudabgsegm341d.dll
+  	  *EXTRA File 		  674816	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_cudacodec341d.dll
+  	  *EXTRA File 		37078016	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_cudafeatures2d341d.dll
+  	  *EXTRA File 		465015296	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_cudafilters341d.dll
+  	  *EXTRA File 		44848640	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_cudaimgproc341d.dll
+  	  *EXTRA File 		15502336	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_cudalegacy341d.dll
+  	  *EXTRA File 		 2525184	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_cudaobjdetect341d.dll
+  	  *EXTRA File 		40031744	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_cudaoptflow341d.dll
+  	  *EXTRA File 		17205248	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_cudastereo341d.dll
+  	  *EXTRA File 		69143040	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_cudawarping341d.dll
+  	  *EXTRA File 		   50688	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_cudev341d.dll
+  	  *EXTRA File 		 1735680	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_datasets341d.dll
+  	  *EXTRA File 		12482560	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_dnn341d.dll
+  	  *EXTRA File 		  741888	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_dnn_objdetect341d.dll
+  	  *EXTRA File 		  689152	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_dpm341d.dll
+  	  *EXTRA File 		 2094592	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_face341d.dll
+  	  *EXTRA File 		 2456064	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_features2d341d.dll
+  	  *EXTRA File 		18053632	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_ffmpeg341_64.dll
+  	  *EXTRA File 		 1543168	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_flann341d.dll
+  	  *EXTRA File 		  503296	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_fuzzy341d.dll
+  	  *EXTRA File 		 1216000	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_hfs341d.dll
+  	  *EXTRA File 		  507392	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_highgui341d.dll
+  	  *EXTRA File 		 6257664	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_imgcodecs341d.dll
+  	  *EXTRA File 		57459712	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_imgproc341d.dll
+  	  *EXTRA File 		  534528	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_img_hash341d.dll
+  	  *EXTRA File 		 1032192	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_line_descriptor341d.dll
+  	  *EXTRA File 		 1884672	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_ml341d.dll
+  	  *EXTRA File 		 1670656	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_objdetect341d.dll
+  	  *EXTRA File 		 1399296	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_optflow341d.dll
+  	  *EXTRA File 		  472064	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_phase_unwrapping341d.dll
+  	  *EXTRA File 		 4709376	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_photo341d.dll
+  	  *EXTRA File 		  395264	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_plot341d.dll
+  	  *EXTRA File 		  681472	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_reg341d.dll
+  	  *EXTRA File 		 1876480	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_rgbd341d.dll
+  	  *EXTRA File 		  902144	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_saliency341d.dll
+  	  *EXTRA File 		  850432	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_shape341d.dll
+  	  *EXTRA File 		  700416	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_stereo341d.dll
+  	  *EXTRA File 		 3195392	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_stitching341d.dll
+  	  *EXTRA File 		  706560	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_structured_light341d.dll
+  	  *EXTRA File 		 1387520	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_superres341d.dll
+  	  *EXTRA File 		 1380864	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_surface_matching341d.dll
+  	  *EXTRA File 		 1890816	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_text341d.dll
+  	  *EXTRA File 		 4300288	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_tracking341d.dll
+  	  *EXTRA File 		 1143296	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_video341d.dll
+  	  *EXTRA File 		  837120	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_videoio341d.dll
+  	  *EXTRA File 		 2169344	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_videostab341d.dll
+  	  *EXTRA File 		 5764096	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_xfeatures2d341d.dll
+  	  *EXTRA File 		 3442176	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_ximgproc341d.dll
+  	  *EXTRA File 		  684544	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_xobjdetect341d.dll
+  	  *EXTRA File 		 1923072	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_xphoto341d.dll
   
   	                   1	C:\Users\winbase\code\of_v0.10.0_vs2017_release\libs\FreeImage\lib\vs\x64\
   	  *EXTRA File 		 1503232	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\fmodex64.dll
   	  *EXTRA File 		 1552384	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\fmodexL64.dll
+  	  *EXTRA File 		 1321984	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_aruco341d.dll
+  	  *EXTRA File 		  819712	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_bgsegm341d.dll
+  	  *EXTRA File 		  790528	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_bioinspired341d.dll
+  	  *EXTRA File 		 4318208	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_calib3d341d.dll
+  	  *EXTRA File 		 1616896	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_ccalib341d.dll
+  	  *EXTRA File 		30996480	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_core341d.dll
+  	  *EXTRA File 		212967936	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_cudaarithm341d.dll
+  	  *EXTRA File 		 2376192	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_cudabgsegm341d.dll
+  	  *EXTRA File 		  674816	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_cudacodec341d.dll
+  	  *EXTRA File 		37078016	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_cudafeatures2d341d.dll
+  	  *EXTRA File 		465015296	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_cudafilters341d.dll
+  	  *EXTRA File 		44848640	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_cudaimgproc341d.dll
+  	  *EXTRA File 		15502336	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_cudalegacy341d.dll
+  	  *EXTRA File 		 2525184	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_cudaobjdetect341d.dll
+  	  *EXTRA File 		40031744	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_cudaoptflow341d.dll
+  	  *EXTRA File 		17205248	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_cudastereo341d.dll
+  	  *EXTRA File 		69143040	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_cudawarping341d.dll
+  	  *EXTRA File 		   50688	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_cudev341d.dll
+  	  *EXTRA File 		 1735680	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_datasets341d.dll
+  	  *EXTRA File 		12482560	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_dnn341d.dll
+  	  *EXTRA File 		  741888	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_dnn_objdetect341d.dll
+  	  *EXTRA File 		  689152	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_dpm341d.dll
+  	  *EXTRA File 		 2094592	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_face341d.dll
+  	  *EXTRA File 		 2456064	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_features2d341d.dll
+  	  *EXTRA File 		18053632	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_ffmpeg341_64.dll
+  	  *EXTRA File 		 1543168	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_flann341d.dll
+  	  *EXTRA File 		  503296	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_fuzzy341d.dll
+  	  *EXTRA File 		 1216000	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_hfs341d.dll
+  	  *EXTRA File 		  507392	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_highgui341d.dll
+  	  *EXTRA File 		 6257664	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_imgcodecs341d.dll
+  	  *EXTRA File 		57459712	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_imgproc341d.dll
+  	  *EXTRA File 		  534528	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_img_hash341d.dll
+  	  *EXTRA File 		 1032192	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_line_descriptor341d.dll
+  	  *EXTRA File 		 1884672	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_ml341d.dll
+  	  *EXTRA File 		 1670656	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_objdetect341d.dll
+  	  *EXTRA File 		 1399296	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_optflow341d.dll
+  	  *EXTRA File 		  472064	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_phase_unwrapping341d.dll
+  	  *EXTRA File 		 4709376	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_photo341d.dll
+  	  *EXTRA File 		  395264	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_plot341d.dll
+  	  *EXTRA File 		  681472	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_reg341d.dll
+  	  *EXTRA File 		 1876480	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_rgbd341d.dll
+  	  *EXTRA File 		  902144	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_saliency341d.dll
+  	  *EXTRA File 		  850432	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_shape341d.dll
+  	  *EXTRA File 		  700416	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_stereo341d.dll
+  	  *EXTRA File 		 3195392	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_stitching341d.dll
+  	  *EXTRA File 		  706560	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_structured_light341d.dll
+  	  *EXTRA File 		 1387520	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_superres341d.dll
+  	  *EXTRA File 		 1380864	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_surface_matching341d.dll
+  	  *EXTRA File 		 1890816	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_text341d.dll
+  	  *EXTRA File 		 4300288	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_tracking341d.dll
+  	  *EXTRA File 		 1143296	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_video341d.dll
+  	  *EXTRA File 		  837120	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_videoio341d.dll
+  	  *EXTRA File 		 2169344	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_videostab341d.dll
+  	  *EXTRA File 		 5764096	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_xfeatures2d341d.dll
+  	  *EXTRA File 		 3442176	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_ximgproc341d.dll
+  	  *EXTRA File 		  684544	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_xobjdetect341d.dll
+  	  *EXTRA File 		 1923072	C:\Users\winbase\code\of_v0.10.0_vs2017_release\apps\myApps\rgbdObjRec2\bin\opencv_xphoto341d.dll

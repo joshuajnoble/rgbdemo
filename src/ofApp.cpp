@@ -1,12 +1,22 @@
 #include "ofApp.h"
 
-double focal_length = 0;
+double focal_length = 0; 
+
+int previewWidth = 640;
+int previewHeight = 480;
 
 //--------------------------------------------------------------
 void ofApp::setup(){
 
+	//detector = cv::linemod::getDefaultLINEMOD();
+	static const int T_LVLS[] = { 4, 15 };
+	std::vector< cv::Ptr<cv::linemod::Modality> > modalities;
+	modalities.push_back(new cv::linemod::ColorGradient());
+	modalities.push_back(new cv::linemod::DepthNormal());
+	detector = new cv::linemod::Detector(modalities, std::vector<int>(T_LVLS, T_LVLS + 2));
+
 	// ??
-	focal_length = 103; // capture.get(cv::CAP_OPENNI_DEPTH_GENERATOR_FOCAL_LENGTH);
+	focal_length = cv::CAP_OPENNI_DEPTH_GENERATOR_FOCAL_LENGTH;
 	num_modalities = (int)detector->getModalities().size();
 
 	learning_lower_bound = 90;
@@ -15,64 +25,127 @@ void ofApp::setup(){
 	num_classes = 0;
 	learn_online = false;
 
+	kinect.open();
+	kinect.initDepthSource();
+	kinect.initColorSource();
+
+	updateDepthLookupTable();
+
+	ofSetWindowShape(previewWidth * 2, previewWidth * 2);
+}
+
+void ofApp::updateDepthLookupTable() {
+	unsigned char nearColor = 255;
+	unsigned char farColor = 0;
+	unsigned int maxDepthLevels = 10001;
+	depthLookupTable.resize(maxDepthLevels);
+	depthLookupTable[0] = 0;
+	for (unsigned int i = 1; i < maxDepthLevels; i++) {
+		depthLookupTable[i] = ofMap(i, 500, 4000, nearColor, farColor, true);
+		//depthLookupTable[i] = ofMap(i, nearClipping, farClipping, nearColor, farColor, true);
+	}
+	depthPixels.allocate(512, 424, OF_IMAGE_GRAYSCALE);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
 
+	// update the kinect
+	kinect.update();
+
+	if (!kinect.getColorSource()->isFrameNew() || !kinect.getDepthSource()->isFrameNew())
+	{
+		return;
+	}
+
+	color = ofxCv::toCv(kinect.getColorSource()->getPixels());
+
+	auto dTemp = kinect.getDepthSource();
+
+	////this next part only needs to happen once
+	//{
+	//	//load the depth to world table
+	//	dTemp->getDepthToWorldTable(depthToWorldTable);
+
+	//	//load it into our preview
+	//	depthToWorldPreview.loadData(depthToWorldTable);
+	//}
+
+	int n = dTemp->getHeight() * dTemp->getWidth();
+	for (int i = 0; i < n; i++) {
+		depthPixels[i] = depthLookupTable[dTemp->getPixels()[i]];
+	}
+
+	depthToWorldPreview.loadData(depthPixels);
+	depth = ofxCv::toCv(depthPixels);
+
+	if (color.rows < 1 || depth.rows < 1) {
+		return;
+	}
+
+
 	// get the sources:
 
 	std::vector<cv::Mat> sources;
-	sources.push_back(color);
-	sources.push_back(depth);
+
+	cv::Mat resizedColor;
+	cv::Size sdSize(960, 540);
+	cv::resize(color, resizedColor, sdSize, CV_INTER_AREA);
+
+	cv::Mat resizedDepth;
+	cv::resize(depth, resizedDepth, sdSize, CV_INTER_AREA);
+
+	sources.push_back(resizedColor);
+	sources.push_back(resizedDepth);
 
 	// Perform matching
 	std::vector<cv::linemod::Match> matches;
-	std::vector<cv::String> class_ids;
 	std::vector<cv::Mat> quantized_images;
 	//match_timer.start();
-	detector->match(sources, (float)matching_threshold, matches, class_ids, quantized_images);
 
-	int classes_visited = 0;
-	std::set<std::string> visited;
+	if (num_classes > 0) {
 
-	for (int i = 0; (i < (int)matches.size()) && (classes_visited < num_classes); ++i)
-	{
-		cv::linemod::Match m = matches[i];
+		detector->match(sources, (float) matching_threshold, matches, class_ids, quantized_images);
 
-		if (visited.insert(m.class_id).second)
+		int classes_visited = 0;
+		std::set<std::string> visited;
+
+		for (int i = 0; (i < (int)matches.size()) && (classes_visited < num_classes); ++i)
 		{
-			++classes_visited;
-			printf("Similarity: %5.1f%%; x: %3d; y: %3d; class: %s; template: %3d\n", m.similarity, m.x, m.y, m.class_id.c_str(), m.template_id);
-			cout << " similarity " << m.similarity << " x " << m.x << " y " << m.y << " id " << m.class_id << " template " << m.template_id << endl;
+			cv::linemod::Match m = matches[i];
 
-			// Draw matching template
-			const std::vector<cv::linemod::Template>& templates = detector->getTemplates(m.class_id, m.template_id);
-			//drawResponse(templates, num_modalities, display, cv::Point(m.x, m.y), detector->getT(0));
-
-			if (learn_online == true)
+			if (visited.insert(m.class_id).second)
 			{
-				/// @todo Online learning possibly broken by new gradient feature extraction,
-				/// which assumes an accurate object outline.
+				++classes_visited;
+				//printf("Similarity: %5.1f%%; x: %3d; y: %3d; class: %s; template: %3d\n", m.similarity, m.x, m.y, m.class_id.c_str(), m.template_id);
+				ofLog() << " similarity " << m.similarity << " x " << m.x << " y " << m.y << " id " << m.class_id << " template " << m.template_id << endl;
 
-				// make a display - this might need to be elsewhere
-				cv::Mat display = color.clone();
+				// Draw matching template
+				const std::vector<cv::linemod::Template>& templates = detector->getTemplates(m.class_id, m.template_id);
+				//drawResponse(templates, num_modalities, display, cv::Point(m.x, m.y), detector->getT(0));
 
-				// Compute masks based on convex hull of matched template
-				cv::Mat color_mask, depth_mask;
-				std::vector<CvPoint> chain = maskFromTemplate(templates, num_modalities, cv::Point(m.x, m.y), color.size(), color_mask, display);
-				subtractPlane(depth, depth_mask, chain, focal_length);
-
-				cv::imshow("mask", depth_mask);
-
-				// If pretty sure (but not TOO sure), add new template
-				if (learning_lower_bound < m.similarity && m.similarity < learning_upper_bound)
+				if (learn_online == true)
 				{
-					int template_id = detector->addTemplate(sources, m.class_id, depth_mask);
-					if (template_id != -1)
+					/// @todo Online learning possibly broken by new gradient feature extraction,
+					/// which assumes an accurate object outline.
+
+					// make a display - this might need to be elsewhere
+					cv::Mat display = color.clone();
+
+					// Compute masks based on convex hull of matched template
+					cv::Mat color_mask, depth_mask;
+					std::vector<CvPoint> chain = maskFromTemplate(templates, num_modalities, cv::Point(m.x, m.y), color.size(), color_mask, display);
+					subtractPlane(depth, depth_mask, chain, focal_length);
+
+					// If pretty sure (but not TOO sure), add new template
+					if (learning_lower_bound < m.similarity && m.similarity < learning_upper_bound)
 					{
-						printf("*** Added template (id %d) for existing object class %s***\n",
-							template_id, m.class_id.c_str());
+						int template_id = detector->addTemplate(sources, m.class_id, depth_mask);
+						if (template_id != -1)
+						{
+							//printf("***  (id %d) for existing object class %s***\n", template_id, m.class_id.c_str());
+							ofLog() << " Added template " << endl;
+						}
 					}
 				}
 			}
@@ -83,6 +156,24 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw() {
+
+	// Color is at 1920x1080 instead of 512x424 so we should fix aspect ratio
+	float colorHeight = previewWidth * (kinect.getColorSource()->getHeight() / kinect.getColorSource()->getWidth());
+	
+	kinect.getColorSource()->draw(0, 0, previewWidth, colorHeight);
+	//kinect.getDepthSource()->draw(previewWidth, 0, previewWidth, previewHeight);
+	depthToWorldPreview.draw(previewWidth, 0);
+
+	if (maskedImage.isAllocated()) {
+		maskedImage.draw(0, previewHeight);
+	}
+
+	if (ofGetMousePressed()) {
+		ofSetColor(0, 255, 0);
+		ofNoFill();
+		ofDrawRectangle(templateRegion.x, templateRegion.y, mouseX - templateRegion.x, mouseY - templateRegion.y);
+		ofSetColor(255, 255, 255);
+	}
 
 }
 
@@ -113,18 +204,18 @@ void ofApp::keyPressed(int key) {
 	case '[':
 		// decrement threshold
 		matching_threshold = max(matching_threshold - 1, -100.f);
-		printf("New threshold: %d\n", matching_threshold);
+		//printf("New threshold: %d\n", matching_threshold);
 		break;
 	case ']':
 		// increment threshold
 		matching_threshold = min(matching_threshold + 1, +100.f);
-		printf("New threshold: %d\n", matching_threshold);
+		//printf("New threshold: %d\n", matching_threshold);
 		break;
 	case 'w':
 		// write model to disk
 		
 		writeLinemod(detector, filename);
-		printf("Wrote detector and templates to %s\n", filename.c_str());
+		//printf("Wrote detector and templates to %s\n", filename.c_str());
 		break;
 	default:
 		;
@@ -155,32 +246,46 @@ void ofApp::mousePressed(int x, int y, int button) {
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button) {
 	// Compute object mask by subtracting the plane within the ROI
+
+	ofLog() << x << " " << y << endl;
+
 	std::vector<CvPoint> chain(4);
 	chain[0] = templateRegion;
 	chain[1] = cv::Point(x, templateRegion.y);
-	chain[2] = templateRegion;
+	chain[2] = cv::Point(x, y);
 	chain[3] = cv::Point(templateRegion.x, y);
 	cv::Mat mask;
 	subtractPlane(depth, mask, chain, focal_length);
 
-	cv::imshow("mask", mask);
+	ofxCv::toOf(mask, maskedImage);
+
+	cv::Size dSize(640, 480);
+	cv::Mat resizedMask;
+	cv::resize(mask, resizedMask, dSize, CV_INTER_LINEAR);
+
+	cv::Mat resizedColor;
+	cv::resize(color, resizedColor, dSize, CV_INTER_AREA);
+
+	cv::Mat resizedDepth;
+	cv::resize(depth, resizedDepth, dSize, CV_INTER_LINEAR);
 
 	std::vector<cv::Mat> sources;
-	sources.push_back(color);
-	sources.push_back(depth);
+	sources.push_back(resizedColor);
+	sources.push_back(resizedDepth);
 
 	// Extract template
 	std::string class_id = cv::format("class%d", num_classes);
 	cv::Rect bb;
-	int template_id = detector->addTemplate(sources, class_id, mask, &bb);
+	int template_id = detector->addTemplate(sources, class_id, resizedMask, &bb);
 	if (template_id != -1)
 	{
-		printf("*** Added template (id %d) for new object class %d***\n",
-			template_id, num_classes);
+		ofLog() << " *** Added template (id " << template_id << " for new object class  " << num_classes << " *** " << endl;
 		//printf("Extracted at (%d, %d) size %dx%d\n", bb.x, bb.y, bb.width, bb.height);
 	}
-
-	++num_classes;
+	else
+	{
+		ofLog() << "adding template failed " << endl;
+	}
 }
 
 //--------------------------------------------------------------
@@ -249,8 +354,7 @@ std::vector<CvPoint> ofApp::maskFromTemplate(const std::vector<cv::linemod::Temp
 
 	cv::Mat mask_copy = mask.clone();
 	IplImage mask_copy_ipl = mask_copy;
-	cvFindContours(&mask_copy_ipl, lp_storage, &lp_contour, sizeof(CvContour),
-		CV_RETR_CCOMP, CV_CHAIN_APPROX_SIMPLE);
+	cvFindContours(&mask_copy_ipl, lp_storage, &lp_contour, sizeof(CvContour), CV_RETR_CCOMP, CV_CHAIN_APPROX_SIMPLE);
 
 	std::vector<CvPoint> l_pts1; // to use as input to cv_primesensor::filter_plane
 
@@ -384,7 +488,7 @@ void ofApp::filterPlane(IplImage * ap_depth, std::vector<IplImage *> & a_masks, 
 		if (fabs(l_dist) > l_max_dist)
 			l_max_dist = l_dist;
 	}
-	//std::cerr << "plane: " << l_n[0] << ";" << l_n[1] << ";" << l_n[2] << ";" << l_n[3] << " maxdist: " << l_max_dist << " end" << std::endl;
+	ofLog() << "plane: " << l_n[0] << ";" << l_n[1] << ";" << l_n[2] << ";" << l_n[3] << " maxdist: " << l_max_dist << " end" << std::endl;
 	int l_minx = ap_depth->width;
 	int l_miny = ap_depth->height;
 	int l_maxx = 0;

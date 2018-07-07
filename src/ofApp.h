@@ -2,12 +2,14 @@
 
 #include "ofMain.h"
 #include "ofxCv.h"
+#include "ofxKinectForWindows2.h"
 #include <opencv2/rgbd.hpp>
 
 class ofApp : public ofBaseApp{
 
 	public:
 		void setup();
+		void updateDepthLookupTable();
 		void update();
 		void draw();
 
@@ -45,8 +47,17 @@ class ofApp : public ofBaseApp{
 		cv::Mat depth, color;
 		float matching_threshold;
 		int num_classes;
+		std::vector<cv::String> class_ids;
 		CvPoint templateRegion;
 		bool learn_online;
 
+		vector<unsigned char> depthLookupTable;
+
+		ofPixels depthPixels;
+		ofTexture depthToWorldPreview;
+		ofFloatPixels depthToWorldTable;
+		ofImage maskedImage;
+
+		ofxKFW2::Device kinect;
 		
 };
